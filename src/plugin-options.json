@@ -13,6 +13,9 @@
     },
     "ignoreOrder": {
       "type": "boolean"
+    },
+    "noLoad": {
+      "type": "boolean"
     }
   }
 }

@@ -404,6 +404,16 @@ class MiniCssExtractPlugin {
               }
             );
 
+            if (this.options.noLoad) {
+              return Template.asString([
+                source,
+                '',
+                `// ${pluginName} CSS loading`,
+                '// CSS loading skipped since noLoad option specified',
+                'installedCssChunks[chunkId] = 0;',
+              ]);
+            }
+
             return Template.asString([
               source,
               '',
